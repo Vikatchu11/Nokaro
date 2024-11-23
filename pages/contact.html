@@ -30,7 +30,7 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="outils.html">Outils</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html" class="active">Nous contacter</a></li>
             </ul>
         </nav>
     </header>
@@ -38,7 +38,7 @@
     <main>
         <section class="contact-section">
             <div class="contact-container" data-aos="fade-up">
-                <h1>Contactez-nous</h1>
+                <h1>Nous contacter</h1>
                 <p class="contact-intro">Prêt à transformer votre idée en réalité ? Parlons-en !</p>
                 
                 <div class="contact-grid">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
 
-                    <form class="contact-form">
+                    <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <label for="name">Nom complet</label>
                             <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -104,7 +104,7 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="outils.html">Outils</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Nous contacter</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -132,6 +132,28 @@
         document.querySelector('.nav-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
             this.classList.toggle('active');
+        });
+
+        // Gestion du formulaire
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupération des données du formulaire
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Ici vous pouvez ajouter votre logique d'envoi du formulaire
+            console.log('Données du formulaire :', formData);
+            
+            // Réinitialisation du formulaire
+            this.reset();
+            
+            // Message de confirmation
+            alert('Votre message a été envoyé avec succès !');
         });
     </script>
 </body>
