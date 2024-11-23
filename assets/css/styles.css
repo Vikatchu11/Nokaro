@@ -1036,6 +1036,7 @@ footer {
 
 .contact-container {
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .contact-container h1 {
@@ -1054,9 +1055,8 @@ footer {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
-    margin-top: 2rem;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
 }
 
 .contact-info {
@@ -1064,20 +1064,15 @@ footer {
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: fit-content;
 }
 
 .info-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 15px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.3s ease;
 }
 
@@ -1104,26 +1099,24 @@ footer {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 2.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .form-group {
     margin-bottom: 1.5rem;
-    text-align: left;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--text-color);
-    font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -1136,37 +1129,36 @@ footer {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 150px;
 }
 
-.submit-btn {
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 1rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     border: none;
-    padding: 1rem 2rem;
     border-radius: 8px;
     font-size: 1rem;
-    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    width: 100%;
     justify-content: center;
+    gap: 0.5rem;
 }
 
-.submit-btn:hover {
+.contact-form .submit-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
 }
 
-.submit-btn i {
+.contact-form .submit-btn i {
     font-size: 1.1rem;
 }
 
@@ -1174,13 +1166,16 @@ footer {
     .contact-grid {
         grid-template-columns: 1fr;
     }
-    
+
+    .contact-info {
+        order: 2;
+    }
+
+    .contact-form {
+        order: 1;
+    }
+
     .contact-section {
         padding: 2rem 1rem;
-    }
-    
-    .contact-form,
-    .contact-info {
-        padding: 1.5rem;
     }
 }
